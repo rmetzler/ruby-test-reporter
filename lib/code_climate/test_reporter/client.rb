@@ -61,7 +61,9 @@ module CodeClimate
         if response.code.to_i >= 200 && response.code.to_i < 300
           response
         else
-          raise "HTTP Error: #{response.code}"
+          puts "REQUEST" << request.to_s
+          puts "RESPONSE" << response.to_s
+          raise "HTTP Error: #{response.code}\nRequest: #{request}\nResponse: #{response}"
         end
       end
 
